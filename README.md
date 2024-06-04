@@ -47,7 +47,7 @@ How to render an image from a data file into a component based on the screen siz
 ### Useful resources
 
 - https://clamp.font-size.app/ for using fluent responsive typografy
-- https://stackoverflow.com/questions/72012052/how-to-render-different-images-based-on-screen-size for rendering different images based on screen size
+- https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for rendering different images based on screen size
 
 ## Author
 
