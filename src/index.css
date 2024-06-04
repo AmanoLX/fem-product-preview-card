@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,700;1,700&display=swap');
+/*
+  ROOT STYLES
+*/
+
+:root {
+  --clr-primary: hsl(158, 36%, 37%);
+  --clr-bg: hsl(30, 38%, 92%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-very-dark-blue: hsl(212, 21%, 14%);
+  --clr-dark-grayish-blue: hsl(228, 12%, 48%);
+
+  --ff-main: 'Montserrat', sans-serif;
+  --fs-main: clamp(0.875rem, 0.7857rem + 0.381vw, 1rem);
+  --ff-headings: 'Fraunces', serif;
+  --fs-headings: 2.3rem;
+  --fw-500: 500;
+  --fw-700: 700;
+}
+
+/*
+  GLOBAL CSS RESET
+*/
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 1rem;
+  height: auto;
+  vertical-align: middle;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*
+  9. Table styles
+*/
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/*
+  PROJECT CSS
+*/
+
+body {
+  background-color: var(--clr-bg);
+  font-family: var(--ff-main);
+  font-size: var(--fs-main);
+  font-weight: var(--fw-500);
+  color: var(--clr-dark-grayish-blue);
+  margin: 1rem;
+}
+
+main {
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
+}
+
+.card {
+  background-color: var(--clr-white);
+  max-width: 37.5em;
+  border-radius: 1rem;
+  display: grid;
+  overflow: hidden;
+}
+
+@media (width > 37.5em) {
+  .card {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card__img img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__content {
+  padding: 2rem;
+}
+
+.card__title {
+  font-size: var(--fs-headings);
+  color: var(--clr-very-dark-blue);
+  font-family: var(--ff-headings);
+  font-weight: var(--fw-700);
+  line-height: 1.1;
+  margin-top: 1rem;
+}
+
+.card__category {
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+}
+
+.card__info {
+  margin-top: 1rem;
+}
+
+.card__price-group {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.card__price-now {
+  color: var(--clr-primary);
+  font-family: var(--ff-headings);
+  font-size: var(--fs-headings);
+  font-weight: var(--fw-700);
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  color: var(--clr-white);
+  background-color: var(--clr-primary);
+  border: transparent;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  transition: ease-in-out 0.3s;
+  width: 100%;
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+.btn:is(:hover, :focus) {
+  background-color: var(--clr-very-dark-blue);
+}
